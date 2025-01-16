@@ -11,6 +11,13 @@ const preview = {
         date: /Date$/i,
       },
     },
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: theme.colors.primary },
+        { name: 'dark', value: theme.colors.secondary },
+      ],
+    },
   },
 };
 
@@ -18,11 +25,9 @@ export default preview;
 
 export const decorators = [
   (Story) => (
-    <div>
-      <ThemeProvider theme={theme} />
-      <GlobalStyles />
+    <ThemeProvider theme={theme}>
       <Story />
-      <ThemeProvider />
-    </div>
+      <GlobalStyles />
+    </ThemeProvider>
   ),
 ];
