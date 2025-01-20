@@ -1,14 +1,9 @@
+import { Base } from '../Base';
+import { MockBase } from '../Base/Base.stories';
 import * as styles from './styles';
 
 function App() {
-  return (
-    <div>
-      <styles.Container>
-        <h1>My App</h1>
-        <p>Welcome to my app!</p>
-      </styles.Container>
-    </div>
-  );
+  return <Base {...MockBase} />;
 }
 
 export default App;
